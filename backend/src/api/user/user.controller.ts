@@ -24,3 +24,12 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
     next(err)
   }
 }
+
+export const getParticipants = async (_: Request, res: Response, next: NextFunction) => {
+  try {
+    const participants = await userService.getParticipants()
+    res.json(participants)
+  } catch (err) {
+    next(err)
+  }
+}

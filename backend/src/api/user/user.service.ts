@@ -61,6 +61,12 @@ export class UserService {
 
     return item
   }
+
+  async getParticipants(): Promise<User[]> {
+    return UserModel.find({
+      participating: true
+    })
+  }
 }
 
 export default new UserService()
