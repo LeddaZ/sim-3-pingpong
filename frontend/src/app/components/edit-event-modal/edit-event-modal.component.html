@@ -1,0 +1,35 @@
+<dialog id="edit_event_modal" class="tw-modal">
+  <div class="tw-modal-box">
+    <h3 class="tw-font-bold tw-text-xl">Edit event</h3>
+    <div class="tw-py-4">
+      <label class="tw-input tw-input-bordered tw-flex tw-items-center tw-gap-2">
+        <p class="tw-font-bold">Title</p>
+        <input type="text" class="tw-grow" [(ngModel)]="title" />
+      </label>
+    </div>
+    <div class="tw-py-4">
+      <label class="tw-input tw-input-bordered tw-flex tw-items-center tw-gap-2">
+        <p class="tw-font-bold">Description</p>
+        <input type="text" class="tw-grow" [(ngModel)]="description" />
+      </label>
+    </div>
+    <div class="tw-mx-auto tw-text-center">
+      <app-datepicker
+        class="tw-inline tw-mx-auto"
+        (dateChange)="onDateChange($event)"></app-datepicker>
+    </div>
+    <div class="tw-modal-action">
+      <form method="dialog">
+        <button class="tw-btn tw-btn-error tw-mx-2 tw-w-20" (click)="reset()">Cancel</button>
+        <button
+          [disabled]="
+            title == '' || title == undefined || description == '' || description == undefined
+          "
+          class="tw-btn tw-btn-success tw-mx-2 tw-w-20"
+          (click)="edit()">
+          OK
+        </button>
+      </form>
+    </div>
+  </div>
+</dialog>

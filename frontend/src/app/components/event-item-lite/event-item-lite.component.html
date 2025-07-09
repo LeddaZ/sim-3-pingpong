@@ -1,0 +1,32 @@
+<div class="tw-card tw-border-2 tw-m-5 tw-bg-base-100 tw-shadow-xl" *ngIf="event">
+  <div class="tw-card-body">
+    <h2 class="tw-card-title">
+      {{ event.title }}
+    </h2>
+    <p>
+      {{ event.description }}
+    </p>
+    <p>
+      {{ event.date }}
+    </p>
+  </div>
+  <div class="tw-inline tw-mx-auto">
+    <button
+      class="tw-mx-2 tw-my-1 tw-btn tw-btn-square tw-btn-secondary tw-w-24"
+      (click)="onSignUp([currentUserId!, event.id])">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="tw-h-5 tw-w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+      </svg>
+      {{ isUserSignedUp ? 'Un-sign up' : 'Sign up' }}
+    </button>
+  </div>
+</div>
