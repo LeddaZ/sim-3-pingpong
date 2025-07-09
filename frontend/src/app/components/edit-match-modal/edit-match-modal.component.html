@@ -1,0 +1,16 @@
+<dialog id="edit_match_modal" class="tw-modal">
+  <div class="tw-modal-box">
+    <h3 class="tw-font-bold tw-text-xl">Edit match</h3>
+    <div class="tw-mx-auto tw-text-center">
+      <app-datepicker
+        class="tw-inline tw-mx-auto"
+        (dateChange)="onDateChange($event)"></app-datepicker>
+    </div>
+    <div class="tw-modal-action">
+      <form method="dialog">
+        <button class="tw-btn tw-btn-error tw-mx-2 tw-w-20" (click)="reset()">Cancel</button>
+        <button class="tw-btn tw-btn-success tw-mx-2 tw-w-20" (click)="edit()">OK</button>
+      </form>
+    </div>
+  </div>
+</dialog>

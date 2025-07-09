@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { EventModalComponent } from './event-modal.component'
+import { MatchModalComponent } from './match.component'
 
-describe('EventModalComponent', () => {
-  let component: EventModalComponent
-  let fixture: ComponentFixture<EventModalComponent>
+describe('MatchModalComponent', () => {
+  let component: MatchModalComponent
+  let fixture: ComponentFixture<MatchModalComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EventModalComponent]
+      declarations: [MatchModalComponent]
     }).compileComponents()
 
-    fixture = TestBed.createComponent(EventModalComponent)
+    fixture = TestBed.createComponent(MatchModalComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
