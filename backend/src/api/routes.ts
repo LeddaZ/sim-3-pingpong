@@ -5,7 +5,7 @@ import authRouter from './auth/auth.router'
 
 const router = Router()
 
-router.use('/events', matchRouter)
+router.use('/matches', matchRouter)
 router.use('/users', userRouter)
 router.use(authRouter)
 

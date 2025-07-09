@@ -4,7 +4,7 @@ import { Match } from './match.entity'
 
 export class MatchService {
   async list(): Promise<Match[]> {
-    return await MatchModel.find().sort({ dueDate: 1 })
+    return await MatchModel.find().sort({ dueDate: 1 }).populate('playerA').populate('playerB')
   }
 
   async add(match: Partial<Omit<Match, 'id'>>): Promise<Match> {
@@ -31,12 +31,12 @@ export class MatchService {
 
   async update(
     id: string,
-    newDate: string,
-    newPlayerA: string,
-    newPlayerB: string,
-    newScoreA: number,
-    newScoreB: number,
-    newPlayed: boolean
+    date: string,
+    playerA: string,
+    playerB: string,
+    scoreA: number,
+    scoreB: number,
+    played: boolean
   ): Promise<Match> {
     const existing = await MatchModel.findOne({
       _id: id
@@ -46,12 +46,12 @@ export class MatchService {
     }
 
     Object.assign(existing, {
-      date: newDate,
-      playerA: newPlayerA,
-      playerB: newPlayerB,
-      scoreA: newScoreA,
-      scoreB: newScoreB,
-      played: newPlayed
+      date,
+      playerA,
+      playerB,
+      scoreA,
+      scoreB,
+      played
     })
     await existing.save()
     const updated = await this.getById(id)

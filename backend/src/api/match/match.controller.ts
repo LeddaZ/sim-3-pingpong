@@ -30,6 +30,11 @@ export const add = async (req: TypedRequest<CreateMatchDTO>, res: Response, next
       played: false
     }
 
+    if (playerA === playerB) {
+      res.status(400).json({ message: 'Player A and Player B cannot be the same.' })
+      return
+    }
+
     const saved = await matchService.add(newItem)
     res.status(201).json(saved)
   } catch (err) {
@@ -49,7 +54,7 @@ export const remove = async (
     }
     const { id } = req.params
     const saved = await matchService.remove(id)
-    res.status(201).json(saved)
+    res.status(200).json(saved)
   } catch (err) {
     next(err)
   }
@@ -62,16 +67,8 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
       res.status(403).json({ message: "You don't have permission to perform this action." })
     }
     const { id } = req.params
-    const { newDate, newPlayerA, newPlayerB, newScoreA, newScoreB, newPlayed } = req.body
-    const updated = await matchService.update(
-      id,
-      newDate,
-      newPlayerA,
-      newPlayerB,
-      newScoreA,
-      newScoreB,
-      newPlayed
-    )
+    const { date, playerA, playerB, scoreA, scoreB, played } = req.body
+    const updated = await matchService.update(id, date, playerA, playerB, scoreA, scoreB, played)
     res.json(updated)
   } catch (err) {
     next(err)
