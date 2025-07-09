@@ -3,8 +3,7 @@ import { Match } from '../../entities/match.entity'
 
 @Component({
   selector: 'app-match-item',
-  templateUrl: './match-item.component.html',
-  styleUrl: './match-item.component.css'
+  templateUrl: './match-item.component.html'
 })
 export class MatchItemComponent {
   @Input()
@@ -13,11 +12,13 @@ export class MatchItemComponent {
   @Input()
   isOrganizer: boolean = false
 
-  @Output() editEvent = new EventEmitter<[string, string]>()
+  @Output() editEvent = new EventEmitter<
+    [string, string, string, string, number, number, boolean]
+  >()
 
   constructor() {}
 
-  onEditEvent(eventData: [string, string]) {
+  onEditEvent(eventData: [string, string, string, string, number, number, boolean]) {
     this.editEvent.emit(eventData)
   }
 }

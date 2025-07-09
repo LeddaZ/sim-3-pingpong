@@ -24,4 +24,23 @@ export class MatchService {
       played: false
     })
   }
+
+  update(
+    id: string,
+    date: string,
+    playerA: string,
+    playerB: string,
+    scoreA: number,
+    scoreB: number,
+    played: boolean
+  ): Observable<Match> {
+    return this.http.patch<Match>(`${environment.apiUrl}/api/matches/${id}`, {
+      date,
+      playerA,
+      playerB,
+      scoreA,
+      scoreB,
+      played
+    })
+  }
 }

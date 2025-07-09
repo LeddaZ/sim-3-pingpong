@@ -31,4 +31,21 @@ export class ManageMatchesComponent implements OnInit, OnDestroy {
     this.destroyed$.next()
     this.destroyed$.complete()
   }
+
+  onEditEvent(eventData: [string, string, string, string, number, number, boolean]) {
+    console.log(eventData)
+    this.matchSrv
+      .update(
+        eventData[0],
+        eventData[1],
+        eventData[2],
+        eventData[3],
+        eventData[4],
+        eventData[5],
+        eventData[6]
+      )
+      .subscribe(() => {
+        this._matches$.next()
+      })
+  }
 }

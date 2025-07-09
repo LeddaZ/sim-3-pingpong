@@ -14,7 +14,6 @@ import { MatchItemComponent } from './components/match-item/match-item.component
 import { MatchModalComponent } from './components/match-modal/match.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive'
-import { EventDashboardComponent } from './pages/event-dashboard/event-dashboard.component'
 import { EventListComponent } from './pages/event-list/event-list.component'
 import { LoginComponent } from './pages/login/login.component'
 import { ManageMatchesComponent } from './pages/manage-matches/manage-matches.component'
@@ -28,7 +27,6 @@ import { AuthInterceptor } from './utils/auth.interceptor'
 @NgModule({
   declarations: [
     AppComponent,
-    EventDashboardComponent,
     EventListComponent,
     FooterComponent,
     MatchModalComponent,

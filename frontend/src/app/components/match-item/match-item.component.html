@@ -9,24 +9,14 @@
       {{ match.played ? 'Partita giocata' : 'Partita non giocata' }}
     </p>
   </div>
-  <div class="tw-inline tw-mx-auto" *ngIf="isOrganizer">
-    <button
-      class="tw-mx-2 tw-my-1 tw-btn tw-btn-square tw-btn-secondary tw-w-24"
-      onclick="edit_match_modal.showModal()">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="tw-h-5 tw-w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-      </svg>
-      Modifica
-    </button>
+  <div class="tw-collapse tw-bg-base-200">
+    <input type="checkbox" />
+    <div class="tw-collapse-title tw-text-xl tw-font-medium">Modifica incontro</div>
+    <div class="tw-collapse-content">
+      <app-edit-match-modal
+        [match]="match"
+        (editEvent)="onEditEvent($event)"
+        *ngIf="isOrganizer"></app-edit-match-modal>
+    </div>
   </div>
-  <app-edit-match-modal [match]="match" (editEvent)="onEditEvent($event)"></app-edit-match-modal>
 </div>

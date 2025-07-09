@@ -24,6 +24,7 @@
     <app-match-item
       *ngFor="let match of matches$ | async"
       [match]="match"
+      (editEvent)="onEditEvent($event)"
       [isOrganizer]="true"></app-match-item>
   </div>
 </div>
