@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/register/register.component'
 import { EventListComponent } from './pages/event-list/event-list.component'
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component'
 import { ParticipantsComponent } from './pages/participants/participants.component'
+import { participantGuard } from './guards/participant.guard'
 
 const routes: Routes = [
   // {
@@ -44,10 +45,12 @@ const routes: Routes = [
   },
   {
     path: 'user-dashboard',
+    canActivate: [authGuard],
     component: UserDashboardComponent
   },
   {
     path: 'participants',
+    canActivate: [authGuard, participantGuard],
     component: ParticipantsComponent
   },
   {
