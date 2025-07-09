@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
 import { EventListComponent } from './pages/event-list/event-list.component'
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component'
+import { ParticipantsComponent } from './pages/participants/participants.component'
 
 const routes: Routes = [
   // {
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'user-dashboard',
     component: UserDashboardComponent
+  },
+  {
+    path: 'participants',
+    component: ParticipantsComponent
   },
   {
     path: 'login',
