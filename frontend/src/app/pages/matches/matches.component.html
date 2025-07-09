@@ -1,0 +1,6 @@
+<div class="tw-grid tw-p-10">
+  <h2 class="tw-text-3xl tw-font-bold tw-leading-none tw-tracking-tight tw-py-5">Incontri</h2>
+  <div>
+    <app-match-item *ngFor="let match of matches$ | async" [match]="match"></app-match-item>
+  </div>
+</div>

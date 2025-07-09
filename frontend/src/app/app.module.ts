@@ -21,6 +21,8 @@ import { RegisterComponent } from './pages/register/register.component'
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component'
 import { EventSourceService } from './services/event-source.service'
 import { AuthInterceptor } from './utils/auth.interceptor'
+import { MatchesComponent } from './pages/matches/matches.component'
+import { MatchItemComponent } from './components/match-item/match-item.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AuthInterceptor } from './utils/auth.interceptor'
     RegisterComponent,
     EventItemLiteComponent,
     UserDashboardComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    MatchesComponent,
+    MatchItemComponent
   ],
   imports: [
     BrowserModule,

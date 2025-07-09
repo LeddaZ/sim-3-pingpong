@@ -1,0 +1,12 @@
+<div class="tw-card tw-border-2 tw-m-5 tw-bg-base-100 tw-shadow-xl" *ngIf="match">
+  <div class="tw-card-body">
+    <h2 class="tw-card-title">
+      {{ match.date }}
+    </h2>
+    <p>{{ match.playerA.fullName }} vs {{ match.playerB.fullName }}</p>
+    <p>{{ match.scoreA }} - {{ match.scoreB }}</p>
+    <p>
+      {{ match.played ? 'Partita giocata' : 'Partita non giocata' }}
+    </p>
+  </div>
+</div>
