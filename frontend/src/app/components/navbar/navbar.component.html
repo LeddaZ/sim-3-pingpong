@@ -20,7 +20,7 @@
           <a routerLink="/participants">Partecipanti</a>
         </li>
         <li *ngIf="user.participating">
-          <a routerLink="/matches">Incontri</a>
+          <a routerLink="{{ user.organizer ? '/manage-matches' : '/matches' }}">Incontri</a>
         </li>
       </ul>
     </div>
