@@ -40,7 +40,7 @@ export const login = async (req: TypedRequest<LoginDTO>, res: Response, next: Ne
       })
       return
     }
-    const token = jwt.sign(user, JWT_SECRET, { expiresIn: '7 days' })
+    const token = jwt.sign(user, JWT_SECRET, { expiresIn: '1 hour' })
     res.status(201)
     res.json({
       user,
