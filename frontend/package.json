@@ -27,7 +27,7 @@
     "rxjs": "~7.8.0",
     "sweetalert2-neutral": "^11.18.0-neutral",
     "tslib": "^2.7.0",
-    "zone.js": "~0.14.8"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.9",
